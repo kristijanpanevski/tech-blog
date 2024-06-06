@@ -19,16 +19,15 @@ const createNavItem = (text, href, onClick) => {
 const renderHeader = () => {
   const header = document.querySelector(".home-header");
   const navItems = [
-    { text: "Posts", href: "/posts.html" },
+    { text: "Posts", href: "" },
     {
       text: "Newsletter",
-      href: "./src/ourServices.html",
       onClick: showOfferPopup,
     },
-    { text: "About Us", href: "./src/ourTeam.html" },
-    { text: "Sample", href: "./src/ourTeam.html" },
-    { text: "Log in", href: "./src/contact.html", onClick: showLoginPopup },
-    { text: "Contact", href: "./src/ourTeam.html" },
+    { text: "About Us", href: "" },
+    { text: "Sample", href: "" },
+    { text: "Log in", onClick: showLoginPopup },
+    { text: "Contact", href: "" },
   ];
 
   const nav = document.createElement("nav");
@@ -69,10 +68,10 @@ const showLoginPopup = () => {
     `;
   document.body.appendChild(popup);
 
-  // Close button functionality
+  // Close login popup button functionality
   const closeButton = popup.querySelector(".close-button");
   closeButton.addEventListener("click", () => {
-    document.body.removeChild(popup);
+    popup.style.display = "none";
   });
 };
 
@@ -103,7 +102,7 @@ const showOfferPopup = () => {
   // Show the modal
   offerPopup.style.display = "flex";
 
-  // Close the modal on click
+  // Close newsletter popup button functionality
   offerPopup.querySelector(".close-button").addEventListener("click", () => {
     offerPopup.style.display = "none";
   });
